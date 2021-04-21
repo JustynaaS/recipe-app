@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
@@ -12,6 +13,7 @@ import javax.persistence.OneToOne;
 import java.util.Set;
 
 import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.EnumType.STRING;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Getter
@@ -32,6 +34,9 @@ private String directions;
 
 @Lob
 private Byte[] image;
+
+@Enumerated(value = STRING)
+private Difficulty difficulty;
 
 @OneToOne(cascade = ALL)
 private Notes notes;
