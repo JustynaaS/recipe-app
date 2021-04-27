@@ -1,8 +1,7 @@
 package guru.springframework.recipeapp.domain;
 
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,8 +13,7 @@ import java.math.BigDecimal;
 import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.GenerationType.IDENTITY;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 
 @Entity

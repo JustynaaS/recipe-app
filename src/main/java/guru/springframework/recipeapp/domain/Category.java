@@ -1,7 +1,6 @@
 package guru.springframework.recipeapp.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,8 +10,7 @@ import java.util.Set;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
-@Getter
-@Setter
+@Data
 @Entity
 public class Category {
 

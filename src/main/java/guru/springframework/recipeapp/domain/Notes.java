@@ -1,7 +1,6 @@
 package guru.springframework.recipeapp.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,8 +11,7 @@ import javax.persistence.OneToOne;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class Notes {
 
 @Id
