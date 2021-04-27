@@ -1,6 +1,7 @@
 package guru.springframework.recipeapp.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
@@ -15,7 +16,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Data
 @NoArgsConstructor
-
+@EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Ingredient {
 
