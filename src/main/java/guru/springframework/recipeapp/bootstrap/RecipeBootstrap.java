@@ -8,9 +8,11 @@ import guru.springframework.recipeapp.domain.UnitOfMeasure;
 import guru.springframework.recipeapp.repositories.CategoryRepository;
 import guru.springframework.recipeapp.repositories.RecipeRepository;
 import guru.springframework.recipeapp.repositories.UnitOfMeasureRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ import java.util.Optional;
 import static guru.springframework.recipeapp.domain.Difficulty.EASY;
 import static guru.springframework.recipeapp.domain.Difficulty.MODERATE;
 
+@Slf4j
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -34,8 +37,10 @@ public RecipeBootstrap(CategoryRepository categoryRepository, RecipeRepository r
 }
 
 @Override
+@Transactional
 public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
     recipeRepository.saveAll(getRecipes());
+    log.debug("Loading bootstrap data");
 }
 
 private List<Recipe> getRecipes() {

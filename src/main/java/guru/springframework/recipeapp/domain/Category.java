@@ -1,7 +1,7 @@
 package guru.springframework.recipeapp.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,8 +11,8 @@ import java.util.Set;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(exclude = {"recipes"})
 @Entity
 public class Category {
 

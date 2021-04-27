@@ -1,7 +1,6 @@
 package guru.springframework.recipeapp.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
@@ -20,8 +19,7 @@ import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.EnumType.STRING;
 import static javax.persistence.GenerationType.IDENTITY;
 
-@Getter
-@Setter
+@Data
 @Entity
 public class Recipe {
 @Id
